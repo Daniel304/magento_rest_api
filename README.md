@@ -27,7 +27,8 @@ You first need to authenticate this app to your magento by running the command
 % authenticate
 ```
 
-Use the above information to connect to the rest api
+Use the above information to connect to the rest api after this you can do a get post put request.
+GET request (get product information):
 
 ```irb
 % irb
@@ -35,6 +36,22 @@ Use the above information to connect to the rest api
    >> json_response = MagentoRestApi::connect('GET','https://your magento/api/rest/products/200', keys)
    => #<Net::HTTPOK 200 OK readbody=true>
 ```
+
+POST request (assign product to website):
+
+```irb
+% irb
+   >> keys = {"consumer_key"=>"your_consumer_key", "consumer_secret"=>"your_consumer_secret", "token"=>"your_token", "token_secret"=>"your_token_secret"}
+   >> post_data = {'website_id' => 1 }.to_json
+   >> json_response = MagentoRestApi::connect('POST','https://your magento/api/rest/products/200/websites', keys, post_data)
+   => #<Net::HTTPOK 200 OK readbody=true>
+```
+
+PUT requests work in the same way as POST requests
+
+more information about magento's REST API: http://devdocs.magento.com/guides/m1x/api/rest/introduction.html
+I cannot stress enough to first find out if the API provides enough information for you.
+
 ## Development
 
 After checking out the repo, run `bin/setup` to install dependencies. Then, run `rake spec` to run the tests. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
