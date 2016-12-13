@@ -9,9 +9,9 @@ Gem::Specification.new do |spec|
   spec.authors       = ["Daniel.van.den.Oord"]
   spec.email         = ["daniel304@chello.nl"]
 
-  spec.summary       = %q{TODO: Write a short summary, because Rubygems requires one.}
-  spec.description   = %q{TODO: Write a longer description or delete this line.}
-  spec.homepage      = "TODO: Put your gem's website or public repo URL here."
+  spec.summary       = "Magento rest api GET, PUT, POST"
+  spec.description   = "This Api works with the magento rest api it supports GET,PUT,POST http requests"
+  spec.homepage      = "https://github.com/Daniel304/magento_rest_api"
   spec.license       = "MIT"
 
   # Prevent pushing this gem to RubyGems.org by setting 'allowed_push_host', or
@@ -29,5 +29,4 @@ Gem::Specification.new do |spec|
 
   spec.add_development_dependency "bundler", "~> 1.10"
   spec.add_development_dependency "rake", "~> 10.0"
-  spec.add_development_dependency "rspec"
 end
