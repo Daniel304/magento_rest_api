@@ -1,8 +1,8 @@
 # MagentoRestApi
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/magento_rest_api`. To experiment with that code, run `bin/console` for an interactive prompt.
-
-TODO: Delete this and the text above, and describe your gem
+This Gem will enable you to communicate to the rest api of magento 1.9.x
+Beware of the limitations of the ruby 1.9.x restfull service.
+The Soap service is much more extensive.
 
 ## Installation
 
@@ -22,7 +22,18 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+You first need to authenticate this app to your magento by running the command
+```sh
+% authenticate
+```
+
+Use the above information to connect to the rest api
+
+```irb
+% irb
+   >> keys = {"consumer_key"=>"your_consumer_key", "consumer_secret"=>"your_consumer_secret", "token"=>"your_token", "token_secret"=>"your_token_secret"}
+   >> json_response = MagentoRestApi::connect('GET','https://your magento/api/rest/products/200', keys)
+   => #<Net::HTTPOK 200 OK readbody=true>
 
 ## Development
 
@@ -32,7 +43,7 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/magento_rest_api. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](contributor-covenant.org) code of conduct.
+Bug reports and pull requests are welcome on GitHub at https://github.com/Daniel304/magento_rest_api. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](contributor-covenant.org) code of conduct.
 
 
 ## License
