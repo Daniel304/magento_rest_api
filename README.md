@@ -34,7 +34,7 @@ Use the above information to connect to the rest api
    >> keys = {"consumer_key"=>"your_consumer_key", "consumer_secret"=>"your_consumer_secret", "token"=>"your_token", "token_secret"=>"your_token_secret"}
    >> json_response = MagentoRestApi::connect('GET','https://your magento/api/rest/products/200', keys)
    => #<Net::HTTPOK 200 OK readbody=true>
-
+```
 ## Development
 
 After checking out the repo, run `bin/setup` to install dependencies. Then, run `rake spec` to run the tests. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
