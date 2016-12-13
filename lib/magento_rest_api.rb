@@ -17,7 +17,7 @@ module MagentoRestApi
   # Example:
   # % irb
   #   >> keys = {"consumer_key"=>"your_consumer_key", "consumer_secret"=>"your_consumer_secret", "token"=>"your_token", "token_secret"=>"your_token_secret"}
-  #   >> json_response = MagentoRestApi::connect('GET','https://www.brickfever.nl/api/rest/products/200', keys)
+  #   >> json_response = MagentoRestApi::connect('GET','https://your magento/api/rest/products/200', keys)
   #   => #<Net::HTTPOK 200 OK readbody=true>
 
   def self.generate_nonce(size=6)
@@ -77,13 +77,6 @@ module MagentoRestApi
       resp, data = http.get(uri.path, { 'Authorization' => header, "Content-Type" => "application/json; charset=utf-8" })
     end
     resp
-  end
-
-  def self.prepare_access_token(keys)
-    consumer = OAuth::Consumer.new(keys['consumer_key'], keys['consumer_secret'], { :site => "https://api.bricklink.com", :scheme => :header })
-    token_hash = { :oauth_token => keys['token'], :oauth_token_secret => keys['token_secret'] }
-    access_token = OAuth::AccessToken.from_hash(consumer, token_hash )
-    return access_token
   end
 
   def self.connect(method, uri, keys, post_data=nil)
